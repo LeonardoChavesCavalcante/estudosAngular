@@ -27,7 +27,7 @@
 	 - Caso a versão exibida seja inferior ou igual a 5.0  desinstale o nodejs utlizando remoção de programa do Windows e instale a versão mais atual do site https://nodejs.org.
  - **npm install -g typescript**
  - **npm install -g typings**
- - **npm install angular-cli**
+ - **npm install -g angular-cli**
  - Editor de texto. Pode ser utilizado qualquer um com suporte ao Typescript, no Sublime por exemplo basta adicionar um plugin para Typescript.  Durante as aulas irei utilizar nos exemplos o VSCode https://code.visualstudio.com/download a instalação é bem simples e já tem suporte nativo ao TypeScript.
 
 

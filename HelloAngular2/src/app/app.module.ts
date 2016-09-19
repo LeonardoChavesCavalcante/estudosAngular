@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
 
-import {MeuCabecalhoComponent} from "./meu-cabecalho/meu-cabecalho.component";
+import { AppComponent } from './app.component';
+import { MeuCabecalhoComponent } from './meu-cabecalho/meu-cabecalho.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +13,10 @@ import {MeuCabecalhoComponent} from "./meu-cabecalho/meu-cabecalho.component";
   ],
   imports: [
     BrowserModule,
-    CommonModule,
-    FormsModule],
+    FormsModule,
+    HttpModule
+  ],
   providers: [],
-  entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }

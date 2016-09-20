@@ -38,8 +38,8 @@
 > **git clone**
    https://github.com/LeonardoChavesCavalcante/estudosAngular.git
    Através do prompt de comando acesse a pasta HelloAngular2, atualize as dependências e inicie o projeto, utilizando os seguintes comandos:
-   **npm install**
-   **npm start**
+ <br>**npm install**   (para atualizar as bibliotecas)</br>
+ <br>**npm start** (para iniciar o projeto)</br>
    Qualquer dúvida estou a disposição, me procurem de preferência antes da aula.
  Pronto agora todos com o ambiente preparado e o projeto HelloAngular2 iniciado, mão na masa e vamos dar continuidade no conteúdo.
 

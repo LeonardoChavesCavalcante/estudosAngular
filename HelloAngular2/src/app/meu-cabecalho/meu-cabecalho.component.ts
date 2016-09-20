@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component,Input } from "@angular/core";
 
 @Component({
     selector:"meu-cabecalho",
@@ -6,5 +6,10 @@ import { Component } from "@angular/core";
     styleUrls:["./meu-cabecalho.component.css"]
 })
 export class MeuCabecalhoComponent{
+  @Input("texto")meuTexto:String;
+
+    constructor(){
+        
+    }
     
 }

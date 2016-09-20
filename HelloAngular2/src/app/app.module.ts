@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MeuCabecalhoComponent } from './meu-cabecalho/meu-cabecalho.component';
+import { MeuCadastroModule } from "./meu-cadastro/meu-cadastro.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MeuCabecalhoComponent } from './meu-cabecalho/meu-cabecalho.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MeuCadastroModule
   ],
   providers: [],
   bootstrap: [AppComponent]

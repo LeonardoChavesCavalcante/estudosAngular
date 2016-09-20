@@ -16,6 +16,7 @@
 
  - npm uninstall -g typescript
  - npm uninstall -g angular-cli
+  - npm uninstall angular-cli
  - npm cache clean
  
   

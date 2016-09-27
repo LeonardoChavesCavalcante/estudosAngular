@@ -1,6 +1,17 @@
 <div>
-<label> Participante </label>
-<input type="text" [(ngModel)]="resultado"/>
-<button (click)="incluir()">incluir</button>
-</div> 
+    <label> Participante </label>
+    <input type="text" [(ngModel)]="nome" />
+    <button (click)="incluir()">incluir</button>
+</div>
 
+<div>
+    <h3 *ngIf="participantes[0]"> Participantes confirmados </h3>
+
+    <div *ngFor="let participante of participantes">
+        {{participante.nome}}
+        <button (click)="excluir(participante)">Excluir </button>
+    </div>
+
+
+
+</div>

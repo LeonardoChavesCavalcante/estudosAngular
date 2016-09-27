@@ -1,6 +1,6 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
 //bodyParser.json();
 app.use(bodyParser.json(),function(req, res, next) {
   
@@ -9,17 +9,17 @@ app.use(bodyParser.json(),function(req, res, next) {
   next();
 }); // for parsing application/json necessário para entender o json recebido no body
 
-const saudar =(req,res)=>{                  
+var saudar =(req,res)=>{                  
   res.send('opá estamos ligados!');
   res.end()
 };
 
-const buscarDados = (req,res)=>{
+var buscarDados = (req,res)=>{
   if (req.url.includes(".ico")){
     return res.end();
   }  
 
-  let  dados = require('./'+req.params["resource"]);
+  var  dados = require('./'+req.params["resource"]);
   if (req.params["id"]){
     dados = dados.find(p => p.id == req.params["id"] );
   }else{
@@ -30,27 +30,27 @@ const buscarDados = (req,res)=>{
   res.json(dados);     
 };
 
-const inserirDados = (req,res)=>{  
-  let  dados = require('./'+req.params["resource"]);
+var inserirDados = (req,res)=>{  
+  var  dados = require('./'+req.params["resource"]);
   if (!req.body.id){
-    let maxId = dados.reduce((prev,cur)=> prev.id >cur.id?prev.id:cur.id );    
+    var maxId = dados.reduce((prev,cur)=> prev.id >cur.id?prev.id:cur.id );    
     req.body.id = Number(maxId) +1 ;
   }
   dados.push(req.body);  
   res.json(dados.find(r => r.id == req.body.id) );
 };
 
-const alterarDados = (req,res)=>{  
-  let dados = require('./'+req.params["resource"]);
-  let dado = dados.find(p => p.id == req.body.id );
+var alterarDados = (req,res)=>{  
+  var dados = require('./'+req.params["resource"]);
+  var dado = dados.find(p => p.id == req.body.id );
   dados.splice(dados.indexOf(dado),1,req.body);    
   res.json(req.body);  
 };
 
-const removerDados = (req,res)=>{  
-  let dados = require('./'+req.params["resource"]);
-  let dado = dados.find(p => p.id == req.body.id );
-  let index = dados.indexOf(dado);
+var removerDados = (req,res)=>{  
+  var dados = require('./'+req.params["resource"]);
+  var dado = dados.find(p => p.id == req.body.id );
+  var index = dados.indexOf(dado);
   if (index >= 0){
     dados.splice(index,1);
   }    
@@ -67,7 +67,7 @@ app.post('/:resource',inserirDados);
 app.delete('/:resource',removerDados);
 
 
-const iniciarLogServidor =()=>{ 
+var iniciarLogServidor =()=>{ 
   console.log("Servidor iniciado")
 };
 

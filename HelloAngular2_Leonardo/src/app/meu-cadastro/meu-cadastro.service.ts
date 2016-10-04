@@ -22,7 +22,6 @@ export class MeuCadastroService{
                         return response.json() as Participante[];
                       }
                    );
-
                 //(resp:Response) => resp.json() as Participante[]
   }
   postParticipantes(participante:Participante):Observable<Participante>{

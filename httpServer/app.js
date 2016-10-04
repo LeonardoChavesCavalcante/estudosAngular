@@ -49,7 +49,7 @@ var alterarDados = (req,res)=>{
 
 var removerDados = (req,res)=>{  
   var dados = require('./'+req.params["resource"]);
-  var dado = dados.find(p => p.id == req.body.id );
+  var dado = dados.find(p => p.id == req.params["id"]);
   var index = dados.indexOf(dado);
   if (index >= 0){
     dados.splice(index,1);
@@ -64,7 +64,7 @@ app.get('/:resource/:id',buscarDados);
 app.put('/:resource',alterarDados);
 app.put('/:resource/:id',alterarDados);
 app.post('/:resource',inserirDados);
-app.delete('/:resource',removerDados);
+app.delete('/:resource/:id',removerDados);
 
 
 var iniciarLogServidor =()=>{ 

@@ -6,6 +6,10 @@ import { Component,Input } from "@angular/core";
     styleUrls:["./meu-cabecalho.component.css"]
 })
 export class MeuCabecalhoComponent{
-    @Input("texto") texto:String;
+  @Input("texto")meuTexto:String;
+
+    constructor(){
+        
+    }
     
 }

@@ -14,6 +14,7 @@ export class MeuCadastroService{
   headers :Headers = new Headers();
   constructor(private http :Http){
     this.headers.append("Content-Type", "application/json")
+    //this.headers.append("Access-Control-Allow-Methods","DELETE,GET,PUT,POST,PATH")
   }
   getParticipantes(): Observable<any>{
      return this.http
@@ -33,15 +34,15 @@ export class MeuCadastroService{
   }
   deleteParticipantes(id:Number):Observable<any>{
     console.log(this.headers);
-    return this.http.delete(this.url+ "/" +id.toString(), {
+    return this.http.delete(this.url+ "/"+ id.toString() , {
                 headers:this.headers,
-                method:"DELETE",
+                method:"DELETE",                
                 withCredentials: false
             })
             .catch( (erro:any) =>   this.handleError(erro) );;
   }
   handleError(error: any): any {
-    console.log('Meu erro aqui');
+    console.log('XMeu erro aqui');
   }
 }
 

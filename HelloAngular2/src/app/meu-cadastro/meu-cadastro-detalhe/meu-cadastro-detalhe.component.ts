@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-
-import {MeuCadastroService} from "../meu-cadastro.service";
+import {Component, AfterContentInit} from '@angular/core';
+import { MeuCadastroService } from '../meu-cadastro.service';
+import { Participante } from '../participante.model';
 
 @Component({
-    selector: 'meu-cadastro-detalhe',
-    templateUrl: 'meu-cadastro-detalhe.component.html'
+  selector: 'meu-cadastro-detalhe',
+  template: './meu-cadastro-detalhe.html'
 })
-export class MeuCadastroDetalheComponent implements OnInit {
-    constructor(private meuCadastroService: MeuCadastroService) { }
+export class MeuCadastroDetalheComponent implements AfterContentInit {
 
-    atualizar() {
-        
-    }
+  private participante : Participante;
 
-    ngOnInit() {
-        console.log("aqui");
-        
-    }
+  constructor(private meuCadastroService:MeuCadastroService) {
+    this.participante = new Participante();
+  }
+
+  ngAfterContentInit() {
+
+  }
 }

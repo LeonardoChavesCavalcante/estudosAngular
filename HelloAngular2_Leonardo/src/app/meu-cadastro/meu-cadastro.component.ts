@@ -34,6 +34,6 @@ export class MeuCadastroComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.buscarParticipantes();
+  //  this.buscarParticipantes();
   }
 }

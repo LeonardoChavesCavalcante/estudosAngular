@@ -10,11 +10,11 @@ export class MeuCadastroDetalheComponent implements AfterContentInit {
 
   private participante : Participante;
 
-  constructor(private meuCadastroService:MeuCadastroService) {    
+  constructor(private meuCadastroService:MeuCadastroService) {
   }
 
   ngAfterContentInit() {
-    this.participante = this.meuCadastroService.participante;
+    //this.participante = this.meuCadastroService.participante;
 
   }
 }

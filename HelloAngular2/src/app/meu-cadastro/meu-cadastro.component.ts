@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, OnDestroy, DoCheck } from "@angular/core";
+import { Router } from "@angular/Router";
 
 import { Participante } from "./participante.model";
 import { MeuCadastroService } from "./meu-cadastro.service";
@@ -11,7 +12,8 @@ import { MeuCadastroService } from "./meu-cadastro.service";
 })
 export class MeuCadastroComponent implements OnInit {
 
-  constructor(private meuCadastroService: MeuCadastroService) {
+  constructor(private meuCadastroService: MeuCadastroService,
+              private router : Router) {
   }
 
   private nome: String = "";
@@ -27,6 +29,10 @@ export class MeuCadastroComponent implements OnInit {
   excluir(participante: Participante) {
     this.meuCadastroService.deleteParticipantes(participante.id)
       .subscribe(resp => this.buscarParticipantes());
+  }
+  editar(){
+    this.router.navigate(["detalhe"]);
+
   }
   buscarParticipantes() {
     this.meuCadastroService.getParticipantes()
